@@ -1,0 +1,11 @@
+services:
+  db:
+    image: mariadb
+    restart: always
+    environment:
+      MARIADB_ROOT_PASSWORD: example
+      MARIADB_DATABASE: u5cms
+    ports:
+      - 3306:3306
+    volumes:
+      - ./u5standard.sql:/docker-entrypoint-initdb.d/init.sql      
